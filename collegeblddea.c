@@ -7,3 +7,5 @@ char i,j,c,m,k,flag=0;
 void stringmatch()
 {
 i=m=c=j=0;
+{
+printf("enter your sem");
