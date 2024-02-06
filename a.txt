@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 welcome to 5th git lab
+=======
+welcome to git lab
+>>>>>>> origin/master

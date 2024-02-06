@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 hi welcome to git lab ,exp3,this is git lab
+=======
+hello exp3 wellcome to 5th git lab
+>>>>>>> origin/master
 
