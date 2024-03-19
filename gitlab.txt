@@ -1,0 +1,1163 @@
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git branch featurebranch
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git checkout  featurebranch
+Switched to branch 'featurebranch'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (featurebranch)
+$ nano page2.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (featurebranch)
+$ git add .
+warning: in the working copy of 'page2.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (featurebranch)
+$ git commit -m "commit master"
+[featurebranch 20d150c] commit master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 page2.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (featurebranch)
+$ git checkout master
+Switched to branch 'master'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git merge featurebranch
+Updating b246c49..20d150c
+Fast-forward
+ page2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 page2.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git branch --merged marks
+fatal: malformed object name marks
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git branch --merged mark
+fatal: malformed object name mark
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git branch --merged featurebranch
+  featurebranch
+* master
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ ls
+page1.txt  page2.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git branch B
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ nano page3.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git add .
+warning: in the working copy of 'page3.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git commit -m "lets stash"
+[master d977dac] lets stash
+ 1 file changed, 1 insertion(+)
+ create mode 100644 page3.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ nano page3.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git stash
+warning: in the working copy of 'page3.txt', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state WIP on master: d977dac lets stash
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git checkout B
+Switched to branch 'B'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (B)
+$ nano page3.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (B)
+$ git add .
+warning: in the working copy of 'page3.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (B)
+$ git commit -m "lets stash again"
+[B c5dd19c] lets stash again
+ 1 file changed, 1 insertion(+)
+ create mode 100644 page3.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (B)
+$ git checkout master
+Switched to branch 'master'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git add .
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git commit -m "lets stash again"
+On branch master
+nothing to commit, working tree clean
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git stash apply
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   page3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ nano page3.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   page3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git clone https://github.com/Aishwaryakurani/g3.git
+Cloning into 'g3'...
+remote: Enumerating objects: 114, done.
+remote: Counting objects: 100% (114/114), done.
+remote: Compressing objects: 100% (56/56), done.
+remote: Total 114 (delta 23), reused 109 (delta 23), pack-reused 0
+Receiving objects: 100% (114/114), 11.57 KiB | 515.00 KiB/s, done.
+Resolving deltas: 100% (23/23), done.
+6 exp:merging with custom commit message
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ cd ..
+
+DELL@AKSHAY-S9AK47 MINGW64 /e
+$ mkdir akshay
+
+DELL@AKSHAY-S9AK47 MINGW64 /e
+$ cd akshay
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay
+$ git config --global user.name "akshaysarwad2004"
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay
+$ git config --global user.email "akshaysarwad24@gmail.com"
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=akshaysarwad2004
+user.email=akshaysarwad24@gmail.com
+safe.directory=E:/gitrepo
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay
+$ git init
+Initialized empty Git repository in E:/akshay/.git/
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay
+$ git remote add origin https://github.com/Aishwaryakurani/g3.git
+fatal: detected dubious ownership in repository at 'E:/akshay'
+'E:/akshay' is on a file system that does not record ownership
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory E:/akshay
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay
+$  git config --global --add safe.directory E:/akshay
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git remote add origin https://github.com/Aishwaryakurani/g3.git
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git fetch origin
+remote: Enumerating objects: 114, done.
+remote: Counting objects: 100% (114/114), done.
+remote: Compressing objects: 100% (56/56), done.
+remote: Total 114 (delta 23), reused 109 (delta 23), pack-reused 0
+Receiving objects: 100% (114/114), 11.57 KiB | 2.31 MiB/s, done.
+Resolving deltas: 100% (23/23), done.
+From https://github.com/Aishwaryakurani/g3
+ * [new branch]      feature-branch   -> origin/feature-branch
+ * [new branch]      feature-branch2  -> origin/feature-branch2
+ * [new branch]      feature-branch28 -> origin/feature-branch28
+ * [new branch]      feature_branch7  -> origin/feature_branch7
+ * [new branch]      featurebranch    -> origin/featurebranch
+ * [new branch]      main             -> origin/main
+ * [new branch]      master           -> origin/master
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git branch featurebranch10
+fatal: not a valid object name: 'master'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git branch featurebranch_10
+fatal: not a valid object name: 'master'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git branch 2bl22cs019
+fatal: not a valid object name: 'master'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git init
+Reinitialized existing Git repository in E:/akshay/.git/
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git merge origin/master
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git branch D
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git checkout D
+Switched to branch 'D'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (D)
+$ nano page4.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (D)
+$ git add .
+warning: in the working copy of 'page4.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (D)
+$ git commit -m "first"
+[D f42e3fa] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 page4.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (D)
+$ git pull origin master --allow-unrelated-histories
+From https://github.com/Aishwaryakurani/g3
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (D)
+$ git push -u origin D
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 269 bytes | 269.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'D' on GitHub by visiting:
+remote:      https://github.com/Aishwaryakurani/g3/pull/new/D
+remote:
+To https://github.com/Aishwaryakurani/g3.git
+ * [new branch]      D -> D
+branch 'D' set up to track 'origin/D'.
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (D)
+$ git checkout master
+Switched to branch 'master'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git merge D -m "merge master to local branch"
+Updating 418c73c..f42e3fa
+Fast-forward (no commit created; -m option ignored)
+ page4.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 page4.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Aishwaryakurani/g3.git
+   418c73c..f42e3fa  master -> master
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ ls
+2bl22cs028/  file.c  g3/  page4.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/akshay (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+exp 7:git tag
+DELL@AKSHAY-S9AK47 MINGW64 /e
+$ mkdir AWM
+
+DELL@AKSHAY-S9AK47 MINGW64 /e
+$ cd AWM
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM
+$ git init
+Initialized empty Git repository in E:/AWM/.git/
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM
+$ nano
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM
+$ nano sample.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM
+$ git add .
+fatal: detected dubious ownership in repository at 'E:/AWM'
+'E:/AWM' is on a file system that does not record ownership
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory E:/AWM
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM
+$  git config --global --add safe.directory E:/AWM
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git add .
+warning: in the working copy of 'sample.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git commit -m "first"
+[master (root-commit) 0429bd9] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 sample.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ nano sample.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git add .
+warning: in the working copy of 'sample.txt', LF will be replaced by CRLF the next time Git touches it
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git commit -m "secpnd"
+[master 985b3ac] secpnd
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ nano sample.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git add .
+warning: in the working copy of 'sample.txt', LF will be replaced by CRLF the next time Git touches it
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git commit -m "third"
+[master 994f61e] third
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ nano sample.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git add .
+warning: in the working copy of 'sample.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git commit -m "fourth"
+[master a2a2895] fourth
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ nano sample.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git add .
+warning: in the working copy of 'sample.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git commit -m "fifth"
+[master edf9ab6] fifth
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git log
+commit edf9ab6728c9448e7d91bc05ac7503b00fcdd95f (HEAD -> master)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 16:50:49 2024 +0530
+
+    fifth
+
+commit a2a2895bcc2db96c027668316c806f82d4f65119
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 16:49:40 2024 +0530
+
+    fourth
+
+commit 994f61ef3451c4830a48d359b4e94fd9b440e8b2
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 16:49:11 2024 +0530
+
+    third
+
+commit 985b3ac090d222bcf4dcbd18f79fec941def4d9f
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 16:48:37 2024 +0530
+
+    secpnd
+
+commit 0429bd9658fb9f32e4d10d00eb83d3c974618a2d
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 16:48:02 2024 +0530
+
+    first
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git tag V1.0  a2a2895bcc2db96c027668316c806f82d4f65119
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git checkout V1.0
+Note: switching to 'V1.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at a2a2895 fourth
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM ((V1.0))
+$ nano sample.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM ((V1.0))
+$ git add .
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM ((V1.0))
+$ git commit -m "sixth"
+[detached HEAD 3e75404] sixth
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM ((3e75404...))
+$ git checkout master
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  3e75404 sixth
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 3e75404
+
+Switched to branch 'master'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ nano checkout master
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git add .
+warning: in the working copy of 'checkout', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'master', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git commit -m "git"
+[master 24964bd] git
+ 2 files changed, 2 insertions(+)
+ create mode 100644 checkout
+ create mode 100644 master
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM (master)
+$ git checkout V1.0
+Note: switching to 'V1.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at a2a2895 fourth
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM ((V1.0))
+$ nano checkout master
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/AWM ((V1.0))
+$ nano sample.txt
+
+Exp 8:cherry-pick
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git branch cs1
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git branch cs2
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (master)
+$ git checkout cs1
+Switched to branch 'cs1'
+A       g3
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git add .
+warning: in the working copy of 'csfile.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git commit -m "1"
+[cs1 935f3c8] 1
+ 2 files changed, 2 insertions(+)
+ create mode 100644 csfile.txt
+ create mode 160000 g3
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git add .
+warning: in the working copy of 'csfile.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git commit -m "2"
+[cs1 0839fab] 2
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git add .
+warning: in the working copy of 'csfile.txt', LF will be replaced by CRLF the next time Git touches it
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git commit -m "3"
+[cs1 d6bcfcd] 3
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git add .
+warning: in the working copy of 'csfile.txt', LF will be replaced by CRLF the next time Git touches it
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git commit -m "4"
+[cs1 fa0c7c5] 4
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git add .
+warning: in the working copy of 'csfile.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git commit -m "5"
+[cs1 36c1b3e] 5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git checkout cs2
+error: Your local changes to the following files would be overwritten by checkout:
+        csfile.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git add .
+warning: in the working copy of 'csfile.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git commit -m "6"
+[cs1 1b7de62] 6
+ 1 file changed, 1 insertion(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git checkout cs2
+warning: unable to rmdir 'g3': Directory not empty
+Switched to branch 'cs2'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2)
+$ ls
+g3/  page1.txt  page2.txt  page3.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2)
+$ git log
+commit d977dacd4db9349573f30a85e1156bf32ef914f1 (HEAD -> cs2, master)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 12:16:39 2024 +0530
+
+    lets stash
+
+commit 20d150cbc77aedb0c545a7d42ca3ed0c25498a72 (featurebranch)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 11:41:13 2024 +0530
+
+    commit master
+
+commit b246c490f2672ccf4a93fece18847c7fa2838cd6
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 09:26:49 2024 +0530
+
+    add
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2)
+$ git checkout cs1
+Switched to branch 'cs1'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git log
+commit 1b7de621514fd0c770fa787ba17fd293d695adac (HEAD -> cs1)
+commit 1b7de621514fd0c770fa787ba17fd293d695adac (HEAD -> cs1)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:35:11 2024 +0530
+
+    6
+
+commit 36c1b3e2373acb6c3b5385ab69d673318850123f
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:32:24 2024 +0530
+
+    5
+
+commit fa0c7c5b5cf583531ab8409768f083969b9b48df
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:31:42 2024 +0530
+
+    4
+
+commit d6bcfcddc205e231486cf9747e8221827398ad2d
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:30:25 2024 +0530
+
+    3
+
+commit 0839fab21d05f1bccf70ff0f21ff5991874b0acb
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:29:41 2024 +0530
+
+    2
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git checkout cs2
+warning: unable to rmdir 'g3': Directory not empty
+Switched to branch 'cs2'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2)
+$ git merge origin
+merge: origin - not something we can merge
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2)
+$ git merge origin/cs1
+merge: origin/cs1 - not something we can merge
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2)
+$ git cherry-pick  0839fab21d05f1bccf70ff0f21ff5991874b0acb^  fa0c7c5b5cf583531ab8409768f083969b9b48df
+[cs2 a712fe1] 1
+ Date: Tue Mar 19 17:28:44 2024 +0530
+ 2 files changed, 2 insertions(+)
+ create mode 100644 csfile.txt
+ create mode 160000 g3
+Auto-merging csfile.txt
+CONFLICT (content): Merge conflict in csfile.txt
+error: could not apply fa0c7c5... 4
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2|CHERRY-PICKING)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2|CHERRY-PICKING)
+$ git add .
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2|CHERRY-PICKING)
+$ git cherry-pick --continue
+[cs2 4cfc07f] finally done
+ Date: Tue Mar 19 17:31:42 2024 +0530
+ 1 file changed, 4 insertions(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs2)
+$ git checkout cs1
+Switched to branch 'cs1'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ nano csfile.txt
+
+Exp 9:use the git to give the details of that specific commit including the author date &comiit msg.
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ nano csfile.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git log
+commit 1b7de621514fd0c770fa787ba17fd293d695adac (HEAD -> cs1)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:35:11 2024 +0530
+
+    6
+
+commit 36c1b3e2373acb6c3b5385ab69d673318850123f
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:32:24 2024 +0530
+
+    5
+
+commit fa0c7c5b5cf583531ab8409768f083969b9b48df
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:31:42 2024 +0530
+
+    4
+
+commit d6bcfcddc205e231486cf9747e8221827398ad2d
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:30:25 2024 +0530
+
+    3
+
+commit 0839fab21d05f1bccf70ff0f21ff5991874b0acb
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:29:41 2024 +0530
+
+    2
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$ git show d6bcfcddc205e231486cf9747e8221827398ad2d
+commit d6bcfcddc205e231486cf9747e8221827398ad2d
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 17:30:25 2024 +0530
+
+    3
+
+diff --git a/csfile.txt b/csfile.txt
+index c714141..3276dc9 100644
+--- a/csfile.txt
++++ b/csfile.txt
+@@ -1,2 +1,3 @@
+ wellcome to github
+ create your account
++login using id and password
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/gitrepo (cs1)
+$
+
+Exp 10:list all commits made by the author between 2 specific date.
+DELL@AKSHAY-S9AK47 MINGW64 /e
+$ mkdir 2bl22cs019
+
+DELL@AKSHAY-S9AK47 MINGW64 /e
+$ cd 2bl22cs019
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019
+$ git init
+Initialized empty Git repository in E:/2bl22cs019/.git/
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019
+$ git config --global user.name "akshaysarwad2004"
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019
+$ git config --global user.email "akshaysarwad24@gmail.com"
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=akshaysarwad2004
+user.email=akshaysarwad24@gmail.com
+safe.directory=E:/gitrepo
+safe.directory=E:/akshay
+safe.directory=E:/AWM
+safe.directory=E:/m500
+safe.directory=E:/a1batch/.git/
+safe.directory=E:/a1batch
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019
+$ git remote add origin https://github.com/Aishwaryakurani/g3.git
+fatal: detected dubious ownership in repository at 'E:/2bl22cs019'
+'E:/2bl22cs019' is on a file system that does not record ownership
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory E:/2bl22cs019
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019
+$ git config --global --add safe.directory E:/2bl22cs019
+
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git remote add origin https://github.com/Aishwaryakurani/g3.git
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git remote -v
+origin  https://github.com/Aishwaryakurani/g3.git (fetch)
+origin  https://github.com/Aishwaryakurani/g3.git (push)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git fetch origin master
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 8 (delta 1), reused 8 (delta 1), pack-reused 0
+Unpacking objects: 100% (8/8), 684 bytes | 1024 bytes/s, done.
+From https://github.com/Aishwaryakurani/g3
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git pull origin master
+From https://github.com/Aishwaryakurani/g3
+ * branch            master     -> FETCH_HEAD
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ GIT_PAGER=git log --author="akshaysarwad2004" --since="2024-01-30" --until="2024-01-23"
+bash: log: command not found
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ GIT_PAGER=git log --author="akshaysarwad2004" --since="2024-01-30"--until="2024-01-23"
+bash: log: command not found
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git log --author="akshaysarwad2004" --since="2024-01-30"--until="2024-01-23"
+commit f42e3fab893c897f08e044adf93b9db06397fad2 (HEAD -> master, origin/master)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 16:27:58 2024 +0530
+
+    first
+
+Exp 11:last 5 commit
+$ git log -n 5
+commit f42e3fab893c897f08e044adf93b9db06397fad2 (HEAD -> master, origin/master)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 16:27:58 2024 +0530
+
+    first
+
+commit 418c73c979eb0f86f34f147644f969f9f3f061b1
+Author: anjanadevi <anjanappatilanjana@gmail.com>
+Date:   Tue Mar 5 21:05:31 2024 -0800
+
+    done
+
+commit 70dd3bc30645732d0f85a7d24c3170d45ccbf504
+Author: anjanadevi <anjanappatilanjana@gmail.com>
+Date:   Tue Mar 5 20:13:16 2024 -0800
+
+    done
+
+Exp12:undo changes
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git log
+commit 0b5fd32e8a30eb1c4083383890ef4aacb299858d (HEAD -> master)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:23:07 2024 +0530
+
+    Revert "14"
+
+    This reverts commit dd74227766d74bff016f62685cc42e3e0feec188.
+
+commit c1215f80b2ae22842d17b3c6a88a1931bbdbd40e
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:14:11 2024 +0530
+
+    15
+
+commit dd74227766d74bff016f62685cc42e3e0feec188
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:05:44 2024 +0530
+
+    14
+
+commit 85b13a789be8fa2bbe34d37748aa3e3be2168640
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:05:19 2024 +0530
+
+    13
+
+commit 891ac7bcdd5d6da118373fd3c1f00807c2227035
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:04:53 2024 +0530
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ nano a1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git add .
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git commit -m "16"
+[master b21ace4] 16
+ 1 file changed, 3 deletions(-)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git log
+commit b21ace491961cfa70d9812a2c911a99a2105c535 (HEAD -> master)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:25:18 2024 +0530
+
+    16
+
+commit 0b5fd32e8a30eb1c4083383890ef4aacb299858d
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:23:07 2024 +0530
+
+    Revert "14"
+
+    This reverts commit dd74227766d74bff016f62685cc42e3e0feec188.
+
+commit c1215f80b2ae22842d17b3c6a88a1931bbdbd40e
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:14:11 2024 +0530
+
+    15
+
+commit dd74227766d74bff016f62685cc42e3e0feec188
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:05:44 2024 +0530
+
+    14
+
+commit 85b13a789be8fa2bbe34d37748aa3e3be2168640
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:05:19 2024 +0530
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ git revert  b21ace491961cfa70d9812a2c911a99a2105c535
+[master 43190b5] undo Revert "16"
+ 1 file changed, 3 insertions(+)
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ nano a1.txt
+
+Exp 5:collaboration and remote repository
+DELL@AKSHAY-S9AK47 MINGW64 /e/2bl22cs019 (master)
+$ cd ..
+
+DELL@AKSHAY-S9AK47 MINGW64 /e
+$ mkdir a11
+
+DELL@AKSHAY-S9AK47 MINGW64 /e
+$ cd a11
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11
+$ git init
+Initialized empty Git repository in E:/a11/.git/
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11
+$ touch m1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11
+$ git add m1.txt
+fatal: detected dubious ownership in repository at 'E:/a11'
+'E:/a11' is on a file system that does not record ownership
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory E:/a11
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11
+$  git config --global --add safe.directory E:/a11
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git add m1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git commit -m "added m1"
+[master (root-commit) a701b93] added m1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 m1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git branch fb
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git log
+commit a701b932ff034afb85cc0c4c19a77fbe79328b4e (HEAD -> master, fb)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:41:20 2024 +0530
+
+    added m1
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ touch f1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git add f1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git commit -m "added f1"
+[master 9932cce] added f1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git checkout fb
+Switched to branch 'fb'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ touch fb1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ git add fb1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ git commit -m "added fb1"
+[fb b235154] added fb1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fb1.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ git log
+commit b2351549faad094ddf19233fea1ef22ecf937cb7 (HEAD -> fb)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:44:14 2024 +0530
+
+    added fb1
+
+commit a701b932ff034afb85cc0c4c19a77fbe79328b4e
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:41:20 2024 +0530
+
+    added m1
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ git checkout master
+Switched to branch 'master'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ touch m2.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git add m2.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git commit -m "added m2"
+[master c549075] added m2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 m2.txt
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git rebase fb
+Successfully rebased and updated refs/heads/master.
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git log
+commit 6bac06f3cf262b2b9b7ba7f0e20bf2fcf9fe5bad (HEAD -> master)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:46:11 2024 +0530
+
+    added m2
+
+commit d1ad5b454db0e2e027f73b71f4626c258118275d
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:42:36 2024 +0530
+
+    added f1
+
+commit b2351549faad094ddf19233fea1ef22ecf937cb7 (fb)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:44:14 2024 +0530
+
+    added fb1
+
+commit a701b932ff034afb85cc0c4c19a77fbe79328b4e
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:41:20 2024 +0530
+
+    added m1
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (master)
+$ git checkout fb
+Switched to branch 'fb'
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ touch fb2
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ git add fb2
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ git commit -m "added fb2"
+[fb 429a900] added fb2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fb2
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ git rebase master
+Successfully rebased and updated refs/heads/fb.
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$ git log
+commit a97cd22c6d6b4694e6464c5ae5a52f3ba276f1c4 (HEAD -> fb)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:48:36 2024 +0530
+
+    added fb2
+
+commit 6bac06f3cf262b2b9b7ba7f0e20bf2fcf9fe5bad (master)
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:46:11 2024 +0530
+
+    added m2
+
+commit d1ad5b454db0e2e027f73b71f4626c258118275d
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:42:36 2024 +0530
+
+    added f1
+
+commit b2351549faad094ddf19233fea1ef22ecf937cb7
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:44:14 2024 +0530
+
+    added fb1
+
+commit a701b932ff034afb85cc0c4c19a77fbe79328b4e
+Author: akshaysarwad2004 <akshaysarwad24@gmail.com>
+Date:   Tue Mar 19 19:41:20 2024 +0530
+
+    added m1
+
+DELL@AKSHAY-S9AK47 MINGW64 /e/a11 (fb)
+$
+
